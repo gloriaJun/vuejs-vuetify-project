@@ -69,8 +69,8 @@ export default {
       formData.append('file', this.file)
       axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
       axios.post('/api/upload', formData)
-        .then(response => {
-          console.log(response)
+        .then(res => {
+          console.log(res.data)
         })
         .catch(error => {
           console.log(error)
