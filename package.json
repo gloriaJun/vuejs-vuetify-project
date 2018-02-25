@@ -8,5 +8,8 @@
     "server": "cd backend && npm start",
     "client": "cd frontend && npm run dev",
     "start": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
   }
 }
