@@ -65,8 +65,10 @@ export default {
     onClickUpload () {
       // FormData에 저장
       let formData = new FormData()
+      formData.append('name', this.file.name)
       formData.append('file', this.file)
-      axios.post('http://localhost:8080/', formData)
+      axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
+      axios.post('/api/upload', formData)
         .then(response => {
           console.log(response)
         })
